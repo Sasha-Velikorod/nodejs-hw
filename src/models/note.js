@@ -11,6 +11,7 @@ const noteSchema = new Schema(
     content: {
       type: String,
       trim: true,
+      default: false,
     },
     tag: {
       type: String,
@@ -22,14 +23,14 @@ const noteSchema = new Schema(
         'Ideas',
         'Travel',
         'Finance',
-        ' Health',
+        'Health',
         'Important',
         'Todo',
       ],
       default: 'Todo',
     },
   },
-  { timestamps: true },
+  { timestamps: true, versionKey: false },
 );
 
 export const Note = model('Note', noteSchema);
