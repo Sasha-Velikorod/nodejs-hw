@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const notesController = async () => {
+const connectMongoDB = async () => {
   try {
     const mongoUrl = process.env.MONGO_URL;
     await mongoose.connect(mongoUrl);
@@ -11,4 +11,4 @@ const notesController = async () => {
   }
 };
 
-export default notesController;
+export default connectMongoDB;
